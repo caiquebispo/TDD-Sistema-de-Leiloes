@@ -1,0 +1,16 @@
+Avaliador (Tests\Service\Avaliador)
+ [x] Encontra maior valor do lance with data set #0
+ [x] Encontra maior valor do lance with data set #1
+ [x] Encontra maior valor do lance with data set #2
+ [x] Encontra menor valor do lance with data set #0
+ [x] Encontra menor valor do lance with data set #1
+ [x] Encontra menor valor do lance with data set #2
+ [x] Encontra tres maiores lances with data set #0
+ [x] Encontra tres maiores lances with data set #1
+ [x] Encontra tres maiores lances with data set #2
+
+Leilao (Tests\Models\Leilao)
+ [x] Leilao deve receber lances with data set "2-lances"
+ [x] Leilao deve receber lances with data set "1-lance"
+ [x] Leilao nao deve receber lances repetidos
+

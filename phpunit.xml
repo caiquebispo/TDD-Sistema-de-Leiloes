@@ -1,0 +1,10 @@
+<phpunit colors="true">
+    <testsuites>    
+        <testsuite name="Unit">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <testdoxText outputFile="log-tests.txt"/>
+    </logging>
+</phpunit>
