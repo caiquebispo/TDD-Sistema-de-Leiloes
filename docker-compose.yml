@@ -1,4 +1,4 @@
-version: '3.8'
+name: tdd
 
 services:
   app:
@@ -13,7 +13,6 @@ services:
       - db
     networks:
       - app-network
-
   db:
     image: mysql:8.0
     environment:
@@ -27,6 +26,11 @@ services:
       - mysql_data:/var/lib/mysql
     networks:
       - app-network
+  php:
+    build: .
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
 
 networks:
   app-network:
