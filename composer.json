@@ -1,0 +1,17 @@
+{
+    "name": "caiquebispo/tdd",
+    "description": "TDD curso Alura",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Caiquebispo\\Tdd\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Caique Bispo"
+        }
+    ],
+    "require": {}
+}
