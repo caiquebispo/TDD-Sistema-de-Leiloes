@@ -5,6 +5,7 @@ namespace Caiquebispo\Tdd\Service;
 use Caiquebispo\Tdd\Model\Leilao;
 use Caiquebispo\Tdd\Model\Lance;
 
+
 class Avaliador
 {
     private $maiorLance = -INF;
@@ -13,10 +14,13 @@ class Avaliador
 
     public function avalia(Leilao $leilao)
     {
+        if (empty($leilao->getLances())) {
+            throw new \DomainException('The Array lance is not empty');
+        }
 
         $laces = $leilao->getLances();
 
-        foreach ($laces as $lance) {
+        foreach ($leilao->getLances() as $lance) {
             if ($lance->getValor() > $this->maiorLance) {
                 $this->maiorLance = $lance->getValor();
             }
@@ -26,7 +30,6 @@ class Avaliador
             }
         }
 
-        $laces = $leilao->getLances();
 
         usort($laces, function (Lance $lance1, Lance $lance2) {
             return $lance2->getValor() - $lance1->getValor();

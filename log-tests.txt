@@ -8,6 +8,7 @@ Avaliador (Tests\Service\Avaliador)
  [x] Encontra tres maiores lances with data set #0
  [x] Encontra tres maiores lances with data set #1
  [x] Encontra tres maiores lances with data set #2
+ [x] Leilao nao pode receber lances vazios
 
 Leilao (Tests\Models\Leilao)
  [x] Leilao deve receber lances with data set "2-lances"

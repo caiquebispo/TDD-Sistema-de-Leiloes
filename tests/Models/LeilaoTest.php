@@ -9,7 +9,6 @@ use Caiquebispo\Tdd\Model\Leilao;
 use Caiquebispo\Tdd\Model\Lance;
 use Caiquebispo\Tdd\Model\Usuario;
 
-
 class LeilaoTest extends TestCase
 {
     #[DataProvider('gerarLances')]

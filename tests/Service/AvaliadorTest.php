@@ -48,6 +48,15 @@ class AvaliadorTest extends TestCase
         self::assertEquals(2500, $this->avaliador->getMaioresLances()[1]->getValor());
         self::assertEquals(2000, $this->avaliador->getMaioresLances()[2]->getValor());
     }
+
+    public function test_leilao_nao_pode_receber_lances_vazios()
+    {
+        $this->expectException(\DomainException::class);
+        $this->expectExceptionMessage('The Array lance is not empty');
+
+        $leilao = new Leilao('Fiat 147 0KM');
+        $this->avaliador->avalia($leilao);
+    }
     public static function leilaoEmOrdemCrescente()
     {
         $leilao = new Leilao('Fiat 147 0KM');

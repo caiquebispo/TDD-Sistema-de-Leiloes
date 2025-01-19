@@ -4,6 +4,7 @@ namespace Caiquebispo\Tdd\Model;
 
 use Caiquebispo\Tdd\Model\Lance;
 
+
 class Leilao
 {
     /** @var Lance[] */
@@ -19,6 +20,7 @@ class Leilao
 
     public function recebeLance(Lance $lance)
     {
+    
         if (!empty($this->lances) && $this->jaTemLanceDoUsuario($lance)) {
             return;
         }
