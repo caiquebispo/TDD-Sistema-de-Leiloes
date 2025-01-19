@@ -13,4 +13,5 @@ Leilao (Tests\Models\Leilao)
  [x] Leilao deve receber lances with data set "2-lances"
  [x] Leilao deve receber lances with data set "1-lance"
  [x] Leilao nao deve receber lances repetidos
+ [x] Leilao nao pode receber mais de 5 lances do mesmo usuario
 

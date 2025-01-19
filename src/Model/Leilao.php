@@ -22,11 +22,22 @@ class Leilao
         if (!empty($this->lances) && $this->jaTemLanceDoUsuario($lance)) {
             return;
         }
+
+        if ($this->quantidadeDeLancesPorUsuario($lance) >= 5) {
+            return;
+        }
+
         $this->lances[] = $lance;
     }
     private function jaTemLanceDoUsuario(Lance $lance)
     {
         return $this->lances[array_key_last($this->lances)]->getUsuario() == $lance->getUsuario();
+    }
+    private function quantidadeDeLancesPorUsuario(Lance $lanceAtual)
+    {
+        return count(array_filter($this->lances, function ($lance) use ($lanceAtual) {
+            return $lance->getUsuario() == $lanceAtual->getUsuario();
+        }));
     }
     /**
      * @return Lance[]
