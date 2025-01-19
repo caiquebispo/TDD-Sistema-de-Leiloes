@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Tests\\Service\\AvaliadorTest::test_encontra_maior_lance":8},"times":{"Tests\\Service\\AvaliadorTest::testAvaliador":0.004,"Tests\\Service\\AvaliadorTest::test_encontra_maior_lance":0.005,"Tests\\Service\\AvaliadorTest::test_encontra_maior_lance_de_forma_crescente":0.005,"Tests\\Service\\AvaliadorTest::test_encontra_maior_lance_de_forma_decrescente":0}}
