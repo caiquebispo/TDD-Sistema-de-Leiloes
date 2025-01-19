@@ -12,42 +12,41 @@ use Caiquebispo\Tdd\Service\Avaliador;
 
 class AvaliadorTest extends TestCase
 {
+    private Avaliador $avaliador;
 
+    protected function setUp(): void
+    {
+        $this->avaliador = new Avaliador();
+    }
     #[DataProvider('leiloesParaTestar')]
     public function test_encontra_maior_valor_do_lance(Leilao $leilao)
     {
         // Act - When
-        $avaliador = new Avaliador();
-
-        $avaliador->avalia($leilao);
+        $this->avaliador->avalia($leilao);
 
         // Assert - Then
-        self::assertEquals(3000, $avaliador->getMaiorLance());
+        self::assertEquals(3000, $this->avaliador->getMaiorLance());
     }
     #[DataProvider('leiloesParaTestar')]
     public function test_encontra_menor_valor_do_lance(Leilao $leilao)
     {
         // Act - When
-        $avaliador = new Avaliador();
-
-        $avaliador->avalia($leilao);
+        $this->avaliador->avalia($leilao);
 
         // Assert - Then
-        self::assertEquals(1000, $avaliador->getMenorLance());
+        self::assertEquals(1000, $this->avaliador->getMenorLance());
     }
     #[DataProvider('leiloesParaTestar')]
     public function test_encontra_tres_maiores_lances(Leilao $leilao)
     {
 
-        $avaliador = new Avaliador();
-
-        $avaliador->avalia($leilao);
+        $this->avaliador->avalia($leilao);
 
         // Assert - Then
-        self::assertCount(3, $avaliador->getMaioresLances());
-        self::assertEquals(3000, $avaliador->getMaioresLances()[0]->getValor());
-        self::assertEquals(2500, $avaliador->getMaioresLances()[1]->getValor());
-        self::assertEquals(2000, $avaliador->getMaioresLances()[2]->getValor());
+        self::assertCount(3, $this->avaliador->getMaioresLances());
+        self::assertEquals(3000, $this->avaliador->getMaioresLances()[0]->getValor());
+        self::assertEquals(2500, $this->avaliador->getMaioresLances()[1]->getValor());
+        self::assertEquals(2000, $this->avaliador->getMaioresLances()[2]->getValor());
     }
     public static function leilaoEmOrdemCrescente()
     {
